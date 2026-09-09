@@ -34,7 +34,6 @@ print(f"Total a pagar: Gs. {total:.0f}")
 # EJERCICIO 3: Semáforo inteligente
 color = input("Ingrese el color del semáforo (Verde/Amarillo/Rojo): ").strip().lower()
 
-# A cada color le corresponde una única acción.
 if color == "verde":
     print("Acción: Avanzar")
 elif color == "amarillo":
@@ -48,7 +47,6 @@ else:
 # EJERCICIO 4: Nivel de batería
 bateria = int(input("Ingrese el porcentaje de batería (0-100): "))
 
-# Primero descartamos valores imposibles, y después clasificamos el nivel.
 if bateria < 0 or bateria > 100:
     print("Error: porcentaje no válido.")
 elif bateria <= 10:
@@ -64,7 +62,6 @@ else:
 # EJERCICIO 5: Evaluación climática
 temperatura = float(input("Ingrese la temperatura actual (°C): "))
 
-# Vamos de más frío a más calor, en orden.
 if temperatura < 10:
     print("Evaluación: Mucho frío")
 elif temperatura <= 24:
