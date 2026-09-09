@@ -59,7 +59,7 @@ else:
     print("Nivel de batería: Alta")
 
 
-# EJERCICIO 5: Evaluación climática
+#EJERCICIO 5: Evaluación climática
 temperatura = float(input("Ingrese la temperatura actual (°C): "))
 
 if temperatura < 10:
