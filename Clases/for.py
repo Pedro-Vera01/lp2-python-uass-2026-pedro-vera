@@ -1,5 +1,5 @@
 #Iterar mediante ciclos FOR
-#Iterar sobre ubna lista
+#Iterar sobre una lista
 
 #lenguajes = ['Python', 'Java','C++','JavaScript','PHP']
 '''for (elemento) in lenguajes:
@@ -46,8 +46,8 @@
 #    print(numero)
 
 #cambiar el valor de aumento del rango (por defecto es 1)
-# for numero in range (2,201,2):
-#     print(numero)
+for numero in range (2,201,2):
+     print(numero)
 
 #disminuir el valor del aumento del rango (por defecto es 1)
 #for numero in range (100,0,-1):
@@ -142,17 +142,17 @@
 # print(f'Los números pares de la lista son: {pares}')
 
 
-monto = float(input("Ingrese el monto de la compra (Gs.): "))
+# monto = float(input("Ingrese el monto de la compra (Gs.): "))
 
-if monto > 500000:
-    descuento = monto * 0.20
-elif monto > 200000:
-    descuento = monto * 0.10
-else:
-    descuento = 0
+# if monto > 500000:
+#     descuento = monto * 0.20
+# elif monto > 200000:
+#     descuento = monto * 0.10
+# else:
+#     descuento = 0
 
-total = monto - descuento
+# total = monto - descuento
 
-print(f"Monto original: Gs. {monto}")
-print(f"Descuento aplicado: Gs. {descuento}")
-print(f"Total a pagar: Gs. {total}")
+# print(f"Monto original: Gs. {monto}")
+# print(f"Descuento aplicado: Gs. {descuento}")
+# print(f"Total a pagar: Gs. {total}")
