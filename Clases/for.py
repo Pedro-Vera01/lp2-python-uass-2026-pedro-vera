@@ -46,8 +46,8 @@
 #    print(numero)
 
 #cambiar el valor de aumento del rango (por defecto es 1)
-for numero in range (2,201,2):
-     print(numero)
+#for numero in range (2,201,2):
+#     print(numero)
 
 #disminuir el valor del aumento del rango (por defecto es 1)
 #for numero in range (100,0,-1):
@@ -90,7 +90,6 @@ for numero in range (2,201,2):
 #EJEMPLO 1: sumar todos los números de una lista
 # numeros = [1,2,3,4,5]
 # suma = 0
-
 # for numero in numeros:
 #     suma += numero
 # print(f'La suma de los números es: {suma}')
