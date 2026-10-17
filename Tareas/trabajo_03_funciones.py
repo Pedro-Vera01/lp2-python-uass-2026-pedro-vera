@@ -58,7 +58,7 @@ resultado = contar_frecuencia(lista)
 print(resultado) """
 
 #EJERCICIO 5: Promedio de notas
-def calcular_promedio(notas):
+""" def calcular_promedio(notas):
     promedio = sum(notas) / len(notas)
     return promedio
 
@@ -66,7 +66,7 @@ def estado(promedio):
     if promedio >= 60:
         return "Aprobado"
     else:
-        return "Return"
+        return "Reprobado"
 
 #Programa principal
 notas = [70, 80, 90, 60]
@@ -122,5 +122,124 @@ while True:
     elif opcion == '4':
         #Sale del programa
         print('Saliendo del programa...')
+        break
+    else:
+        print('Opción inválida') """
+
+#EJERCICIO 7: Producto más caro
+""" productos = [
+    ("Teclado", 150000),
+    ("Mouse", 80000),
+    ("Monitor", 1200000) ]
+
+def producto_mas_caro(productos):
+    nombre_caro = ""
+    precio_caro = 0
+
+    for nombre, precio in productos:
+        if precio > precio_caro:
+            nombre_caro = nombre
+            precio_caro = precio
+    return nombre_caro, precio_caro
+
+#Programa principal
+nombre, precio = producto_mas_caro(productos)
+
+print(f'Producto: {nombre}')
+print(f'Precio: {precio}')
+ """
+#EJERCICIO 8: Inventario de productos
+""" inventario = {
+    "Teclado": 10,
+    "Mouse": 5,
+    "Monitor": 2
+}
+#FUNCIONES
+def agregar_stock():
+    producto = input('Ingrese el producto: ')
+    cantidad = int(input('Ingrese la cantidad a agregar: '))
+    inventario[producto] += cantidad
+    print(f'Stock actualizado: {producto} = {inventario[producto]}')
+
+def vender_producto():
+    producto = input('Ingrese el producto a vender: ')
+    cantidad = int(input('Ingrese la cantidad a vender: '))
+
+    if cantidad > inventario[producto]:
+        print(f'Stock insuficiente. Disponible: {inventario[producto]}')
+    else:
+        inventario[producto] -= cantidad
+        print(f'Venta registrada. Stock restante de {producto}: {inventario[producto]}')
+
+def consultar_stock():
+    producto = input('Ingrese el producto a consultar: ')
+
+    if producto in inventario:
+        print(f'Stock de {producto}: {inventario[producto]}')
+    else:
+        print('Producto no encontrado...')
+
+#Programa principal
+while True:
+    print('\n === INVENTARIO DE PRODUCTOS ===')
+    print('1- Agregar stock')
+    print('2- Vender producto')
+    print('3- Consultar stock')
+    print('4- Salir')
+
+    opcion = input('Seleccione una opción: ')
+
+    if opcion == '1':
+        agregar_stock()
+    elif opcion == '2':
+        vender_producto()
+    elif opcion == '3':
+        consultar_stock()
+    elif opcion == '4':
+        print('Muchas gracias por su compra!!')
+        print('Saliendo del programa...')
+        break
     else:
         print('Opción inválida')
+ """
+#EJERCICIO 9: Ranking de alumnos
+alumnos = [
+    ("Juan", 85),
+    ("Ana", 95),
+    ("Pedro", 70)
+]
+#FUNCIONES
+def mejor_alumno(alumnos):
+    nombre_mejor = ""
+    nota_mejor = 0
+
+    for nombre, nota in alumnos:
+        if nota > nota_mejor:
+            nombre_mejor = nombre
+            nota_mejor = nota
+    return nombre_mejor, nota_mejor
+
+def peor_alumno(alumnos):
+    nombre_peor, nota_peor = alumnos[0]
+
+    for nombre, nota in alumnos:
+        if nota < nota_peor:
+            nombre_peor = nombre
+            nota_peor = nota
+    return nombre_peor, nota_peor
+
+def promedio_general(alumnos):
+    total = 0
+
+    for nombre, nota in alumnos:
+        total += nota
+    return total / len(alumnos)
+
+#Programa principal
+nombre, nota = mejor_alumno(alumnos)
+print(f'Mejor alumno: {nombre} ({nota})')
+
+nombre, nota = peor_alumno(alumnos)
+print(f'Peor alumno: {nombre} ({nota})')
+
+print(f'Promedio general: {promedio_general(alumnos)}')
