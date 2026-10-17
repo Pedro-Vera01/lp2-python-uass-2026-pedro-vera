@@ -27,9 +27,9 @@ else:
 
 total = monto - descuento
 
-print(f"Monto original: Gs. {monto:.0f}")
-print(f"Descuento aplicado: Gs. {descuento:.0f}")
-print(f"Total a pagar: Gs. {total:.0f}")
+print(f"Monto original: Gs. {monto}")
+print(f"Descuento aplicado: Gs. {descuento}")
+print(f"Total a pagar: Gs. {total}")
 
 
 # EJERCICIO 3: Semáforo inteligente
@@ -42,7 +42,7 @@ elif color == "amarillo":
 elif color == "rojo":
     print("Acción: Detenerse")
 else:
-    print("Error: color no válido.")
+    print("Color no válido.")
 
 
 # EJERCICIO 4: Nivel de batería
