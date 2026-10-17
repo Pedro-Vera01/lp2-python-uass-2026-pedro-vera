@@ -1,4 +1,5 @@
 # EJERCICIO 1: Control de acceso
+
 edad = int(input("Ingrese su edad: "))
 documento = input("¿Posee documento de identidad? (S/N): ").strip().upper()
 
@@ -60,7 +61,7 @@ else:
 
 
 #EJERCICIO 5: Evaluación climática
-temperatura = float(input("Ingrese la temperatura actual (°C): "))
+temperatura = float(input("Ingrese la temperatura actual: "))
 
 if temperatura < 10:
     print("Evaluación: Mucho frío")
