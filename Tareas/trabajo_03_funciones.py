@@ -1,5 +1,5 @@
 #EJERCICIO 1: Estadísticas de una lista
-""" def estadisticas(lista):
+def estadisticas(lista):
     maximo = 0
     minimo = 101010
     promedio = sum(lista) / len(lista)
@@ -16,10 +16,10 @@ numeros = [10, 20, 30, 40, 50]
 
 mayor, menor, promedio = estadisticas(numeros)
 
-print(f'El número mayor es {mayor}, el menor es {menor} y el promedio es {promedio}') """
+print(f'El número mayor es {mayor}, el menor es {menor} y el promedio es {promedio}')
 
 #EJERCICIO 2: Buscar un elemento
-""" def buscar(lista, valor):
+def buscar(lista, valor):
     for nombre in lista:
         if nombre == valor:
             return True
@@ -29,18 +29,18 @@ print(f'El número mayor es {mayor}, el menor es {menor} y el promedio es {prome
 alumnos = ["Ana", "Luis", "Carlos", "Pedro","Maria Luisa", "César"]
 nombre = input('Ingrese el nombre a buscar: ')
 resultado = buscar(alumnos, nombre)
-print(resultado) """
+print(resultado)
 
 #EJERCICIO 3: Eliminar duplicados
-""" def eliminar_duplicados(lista):
+def eliminar_duplicados(lista):
     return set(lista)
 
 #Programa principal
 numeros = [1, 2, 2, 3, 3, 3, 4]
-print(eliminar_duplicados(numeros)) """
+print(eliminar_duplicados(numeros))
 
 #EJERCICIO 4: Frecuencia de elementos
-""" def contar_frecuencia(lista):
+def contar_frecuencia(lista):
     frecuencia = {}
 
     for elemento in lista:
@@ -55,10 +55,10 @@ print(eliminar_duplicados(numeros)) """
 lista = ["a", "b", "a", "c", "a", "b"]
 resultado = contar_frecuencia(lista)
 
-print(resultado) """
+print(resultado)
 
 #EJERCICIO 5: Promedio de notas
-""" def calcular_promedio(notas):
+def calcular_promedio(notas):
     promedio = sum(notas) / len(notas)
     return promedio
 
@@ -124,10 +124,10 @@ while True:
         print('Saliendo del programa...')
         break
     else:
-        print('Opción inválida') """
+        print('Opción inválida')
 
 #EJERCICIO 7: Producto más caro
-""" productos = [
+productos = [
     ("Teclado", 150000),
     ("Mouse", 80000),
     ("Monitor", 1200000) ]
@@ -147,9 +147,9 @@ nombre, precio = producto_mas_caro(productos)
 
 print(f'Producto: {nombre}')
 print(f'Precio: {precio}')
- """
+
 #EJERCICIO 8: Inventario de productos
-""" inventario = {
+inventario = {
     "Teclado": 10,
     "Mouse": 5,
     "Monitor": 2
@@ -201,7 +201,7 @@ while True:
         break
     else:
         print('Opción inválida')
- """
+
 #EJERCICIO 9: Ranking de alumnos
 alumnos = [
     ("Juan", 85),
@@ -243,3 +243,76 @@ nombre, nota = peor_alumno(alumnos)
 print(f'Peor alumno: {nombre} ({nota})')
 
 print(f'Promedio general: {promedio_general(alumnos)}')
+
+#EJERCICIO 10: Sistema de gestión de estudiantes
+estudiantes = {
+    "Juan": [70, 80, 90],
+    "Ana": [100, 95, 90]
+}
+#FUNCIONES
+def agregar_estudiante():
+    nombre = input('Ingrese el nombre del estudiante: ')
+
+    if nombre == '':
+        print('El nombre no puede estar vacío...')
+    elif nombre in estudiantes:
+        print('El estudiante ya existe...')
+    else:
+        cantidad = int(input('¿Cuántas notas tiene? '))
+        while cantidad < 1:
+            print('Debe tener al menos una nota')
+            cantidad = int(input('¿Cuántas notas tiene? '))
+
+        notas = []
+        for i in range(cantidad):
+            nota = int(input(f'Ingrese la nota {i + 1}: '))
+            while nota < 0 or nota > 100:
+                print('La nota debe estar entre 0 y 100')
+                nota = int(input(f'Ingrese la nota {i + 1}: '))
+            notas.append(nota)
+
+        estudiantes[nombre] = notas
+        print('Estudiante agregado correctamente...')
+
+def calcular_promedio(notas):
+    return sum(notas) / len(notas)
+
+def mostrar_promedios():
+    print('*** Promedios ***')
+    for nombre, notas in estudiantes.items():
+        print(f'{nombre}: {(calcular_promedio(notas))}')
+
+def mejor_estudiante():
+    mejor_nombre = ""
+    mejor_promedio = -1
+
+    for nombre, notas in estudiantes.items():
+        promedio = calcular_promedio(notas)
+        if promedio > mejor_promedio:
+            mejor_nombre = nombre
+            mejor_promedio = promedio
+
+    print(f'Mejor estudiante: {mejor_nombre} con promedio {mejor_promedio}')
+
+#Programa principal
+while True:
+    print('*** GESTIÓN DE ESTUDIANTES ***')
+    print('1. Agregar estudiante')
+    print('2. Mostrar promedios')
+    print('3. Mostrar mejor estudiante')
+    print('4. Salir')
+
+    opcion = input('Seleccione una opción: ')
+
+    if opcion == '1':
+        agregar_estudiante()
+    elif opcion == '2':
+        mostrar_promedios()
+    elif opcion == '3':
+        mejor_estudiante()
+    elif opcion == '4':
+        print('Saliendo del programa...')
+        print('Gracias por utilizar!!!')
+        break
+    else:
+        print('Opción inválida')
